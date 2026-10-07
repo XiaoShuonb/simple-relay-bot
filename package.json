@@ -1,0 +1,12 @@
+{
+  "name": "simple-relay-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

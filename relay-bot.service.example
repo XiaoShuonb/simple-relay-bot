@@ -1,0 +1,23 @@
+[Unit]
+Description=Simple Telegram Relay Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/simple-relay-bot
+ExecStart=/usr/bin/node src/index.js
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=production
+EnvironmentFile=/opt/simple-relay-bot/.env
+User=relaybot
+Group=relaybot
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/opt/simple-relay-bot/data
+
+[Install]
+WantedBy=multi-user.target
